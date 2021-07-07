@@ -1,0 +1,471 @@
+ul.vakata-context {
+    padding: 0 !important;
+    margin: 0 !important
+}
+
+.leaflet-left {
+    right: 0 !important;
+    left: auto !important
+}
+
+.leaflet-top {
+    bottom: 0 !important;
+    top: auto !important
+}
+
+.leaflet-container .leaflet-control-zoom {
+    margin-right: 45px !important;
+    margin-bottom: 15px !important
+}
+
+.leaflet-control-attribution {
+    display: none !important
+}
+
+.leaflet-bottom,
+.leaflet-top {
+    z-index: 101 !important
+}
+
+.leaflet-control-zoom a {
+    background-color: rgba(0, 0, 0, .8) !important;
+    color: #fff !important;
+    width: 25px !important;
+    height: 25px !important
+}
+
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+    border-radius: 0 !important;
+    -webkit-border-radius: 0 !important
+}
+
+.leaflet-container .leaflet-control-zoom {
+    border: none !important;
+    -webkit-border-radius: 0 !important;
+    border-radius: 0 !important
+}
+
+.uk-icon-button {
+    outline: 0
+}
+
+.uk-notification-message {
+    background: #222;
+    font-size: 1rem
+}
+
+* {
+    box-sizing: border-box
+}
+
+body,
+html {
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Merriweather Sans', sans-serif
+}
+
+input {
+    font-family: 'Merriweather Sans', sans-serif
+}
+
+.main-menu-header {
+    height: 90px;
+}
+
+.main-menu-header h4 {
+    font-family: 'Merriweather Sans', sans-serif;
+    color: #fff;
+    line-height: 1.2
+}
+
+.main-menu-header img {
+    max-width: 100px;
+    height: 90px;
+}
+
+.app {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative
+}
+
+#map {
+    flex: 1
+}
+
+.map-container {
+    flex: 1;
+    display: flex;
+    flex-direction: row
+}
+
+.landing-page {
+    background-color: #eee
+}
+
+.app-top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 103
+}
+
+button.locateme-button,
+button.locateme-button:active,
+button.locateme-button:focus,
+button.locateme-button:hover,
+button.locateme-button:visited,
+button.main-menu-button,
+button.main-menu-button:active,
+button.main-menu-button:focus,
+button.main-menu-button:hover,
+button.main-menu-button:visited {
+    color: #fff !important
+}
+
+.locateme-button,
+.main-menu-button {
+    font-family: 'Merriweather Sans', sans-serif;
+    padding: 10px;
+    background: #222;
+    color: #fff;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out
+}
+
+.locateme-button {
+    background: #292929
+}
+
+.locateme-button:hover,
+.main-menu-button:hover {
+    background: #333
+}
+
+.locateme-button svg,
+.main-menu-button svg {
+    width: 30px
+}
+
+.locateme-button svg:hover,
+.main-menu-button svg:hover {
+    color: #fff
+}
+
+.city-logo {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    z-index: 101
+}
+
+.univerzal-logo {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    z-index: 101;
+    width: 60px
+}
+
+.univerzal-logo img {
+    width: 100%
+}
+
+.map-container {
+    flex: 1;
+    display: flex
+}
+
+#map {
+    flex: 1
+}
+
+hr {
+    border-top-color: #333 !important
+}
+
+.main-menu-entry button.selected,
+.main-menu-entry button:hover {
+    background-color: #1a1a1a;
+    color: #fff !important
+}
+
+.main-menu-entry button {
+    transition: all ease 0.5s;
+    padding: 10px 0 10px 10px;
+    background: 0 0;
+    color: #fff;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-family: 'Merriweather Sans', sans-serif
+}
+
+.link-btn {
+    background: 0 0;
+    color: #fff;
+    border: none;
+    outline: 0;
+    font-family: 'Merriweather Sans', sans-serif;
+    cursor: pointer
+}
+
+.link-btn-text {
+    transition: all ease 0.5s;
+    padding: 3px 0;
+    border-bottom: 2px solid #222
+}
+
+.link-btn-text:hover {
+    border-bottom: 2px solid #1a1a1a
+}
+
+.main-menu-footer {
+    margin-top: auto
+}
+
+.app-info small {
+    padding: 0;
+    margin: 3px 0;
+    color: #5b5b5b;
+    display: block
+}
+
+.landing-img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center
+}
+
+.landing-img-1 {
+    background-image: url('../img/landing-aleja.jpg')
+}
+
+.landing-img-2 {
+    background-image: url('../img/landing-groblje.jpg')
+}
+
+.landing-img-3 {
+    background-image: url('../img/landing-kapelica.jpg')
+}
+
+#img-overlay {
+    z-index: 101
+}
+
+.app-overlay {
+    z-index: 104;
+    display: none
+}
+
+.spinner-overlay {
+    z-index: 103
+}
+
+#slika {
+    border: 1px solid #333
+}
+
+#slika img {
+    width: 100%
+}
+
+#search-bar {
+    border: none;
+    padding: 0 16px;
+    transition: 0.2s ease-in-out;
+    transition-property: all;
+    font-size: 1.1rem;
+    background: #2f2f2f !important;
+    color: #fff;
+    height: 50px;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+#search-bar:-webkit-autofill {
+    background-color: #333 !important
+}
+
+#search-bar:hover {
+    background: #333
+}
+
+#search-bar:-ms-input-placeholder,
+#search-bar::-ms-input-placeholder,
+#search-bar::placeholder {
+    color: #2b2222
+}
+
+#search-btn {
+    background: #404040;
+    color: #fff;
+    border-left: 1px solid #3f3f3f;
+    height: 50px;
+    font-family: 'Merriweather Sans', sans-serif
+}
+
+#search-bar:focus {
+    outline: 0
+}
+
+#search-btn:hover {
+    background: #4c4c4c
+}
+
+#grave-info .uk-button {
+    line-height: 1.5;
+    padding-top: 5px;
+    padding-bottom: 5px
+}
+
+.search-overlay {
+    display: none;
+    z-index: 102;
+    background: #222;
+    padding: 170px 30px 60px
+}
+
+.search-overlay .uk-close {
+    position: absolute;
+    right: 32px;
+    top: 150px
+}
+
+.search-graveyard-name {
+    color: #555
+}
+
+.search-overlay ul {
+    padding: 0;
+    overflow-y: scroll;
+    display: block;
+    height: 100%
+}
+
+.search-overlay li {
+    transition: background-color ease-in-out 0.3s;
+    padding: 10px;
+    list-style: none
+}
+
+.search-overlay li:hover {
+    background: #2a2a2a;
+    cursor: pointer
+}
+
+#faq-modal,
+#impressum-modal,
+#report-modal,
+#tutorial-modal {
+    background: #222
+}
+
+#faq-modal h2,
+#impressum-modal h2,
+#report-modal h2,
+#tutorial-modal h2 {
+    color: #fff
+}
+
+#faq-modal h4,
+#impressum-modal h4,
+#tutorial-modal h4 {
+    color: #aaa
+}
+
+#impressum-modal p {
+    margin: 10px 0
+}
+
+#faq-modal .uk-modal-dialog,
+#impressum-modal .uk-modal-dialog,
+#report-modal .uk-modal-dialog,
+#tutorial-modal .uk-modal-dialog {
+    background: #222;
+    color: #fff
+}
+
+#faq-modal .uk-button,
+#impressum-modal .uk-button,
+#report-modal .uk-button,
+#report-modal .uk-input,
+#report-modal .uk-textarea,
+#tutorial-modal .uk-button,
+#tutorial-modal .uk-input,
+#tutorial-modal .uk-textarea {
+    background-color: #2f2f2f;
+    color: #fff;
+    border: 1px solid #5e5e5e
+}
+
+#report-modal .uk-textarea {
+    padding: 15px
+}
+
+#faq-modal .uk-accordion-title {
+    color: #c8c8c8;
+    cursor: pointer
+}
+
+#faq-modal hr,
+#impressum-modal hr,
+#tutorial-modal hr {
+    border-top: 1px solid #404040
+}
+
+.warning-box {
+    background: #2b2222;
+    color: #825454;
+    border: 1px solid #352929
+}
+
+.info-box {
+    background: #22252b;
+    color: #548082;
+    border: 1px solid #293335
+}
+
+#contact-form #btn-new-report,
+#contact-form .warning-box {
+    display: none
+}
+
+.uk-nav-default>li>a {
+    color: #fff !important
+}
+
+#main-modal {
+    background: #222
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 4px
+}
+
+.dot.yellow {
+    background-color: #e4ff00
+}
+
+.dot.red {
+    background-color: red
+}
+
+button:disabled {
+    opacity: .4 !important
+}
+
+.locate-me-green {
+    background: #1e9a01;
+}

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <title>Univerzal Đakovo e-groblje</title>
+
+    <meta name="description" content="Interaktivna aplikacija za pronalazak ukopanih osoba ..."/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="css/uikit.min.css"/>
+    <link rel="stylesheet" href="css/main.css?v=523433a"/>
+    <link href="//fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://univerzal-djakovo.hr/e-groblje/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://univerzal-djakovo.hr/e-groblje/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://univerzal-djakovo.hr/e-groblje/img/favicon-16x16.png">
+    <link rel="manifest" href="https://univerzal-djakovo.hr/e-groblje/img/site.webmanifest">
+    <link rel="mask-icon" href="https://univerzal-djakovo.hr/e-groblje/img/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="https://univerzal-djakovo.hr/e-groblje/img/favicon.ico">
+
+    <meta name="apple-mobile-web-app-title" content="Đakovo E-groblje">
+    <meta name="application-name" content="Đakovo E-groblje">
+    <meta name="msapplication-TileColor" content="#222222">
+    <meta name="msapplication-config" content="https://univerzal-djakovo.hr/e-groblje/img/browserconfig.xml">
+    <meta name="theme-color" content="#222222">
+
+    <meta property="og:title" content="Univerzal Đakovo e-groblje">
+    <meta property="og:description" content="Interaktivna aplikacija za pronalazak ukopanih osoba ...">
+    <meta property="og:image:height" content="450">
+    <meta property="og:image:width" content="820">
+    <meta property="og:image" content="https://www.univerzal-djakovo.hr/e-groblje/img/fb-slika.jpg">
+</head>
+
+<body class="landing-page" style="margin:0;padding:0;width:100%;height:100%">
+
+    <!-- MAIN-MENU -->
+    <aside>
+        <div id="menu-sidepanel" uk-offcanvas="mode: push">
+            <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+                <div class="main-menu-header">
+                    <div class="uk-flex uk-flex-middle">
+                        <a href="http://www.univerzal-djakovo.hr" target="_blank"><img src="img/logo-boja.png" alt=""></a>
+                        <h4 class="uk-margin-left uk-margin-remove-top uk-margin-remove-right uk-margin-remove-bottom">
+                            e-groblje
+                        </h4>
+                    </div>
+                </div>
+                <hr>
+                <!-- GROBLJA -->
+                <ul class="main-menu-items uk-nav uk-nav-default">
+                    <li class="uk-nav-header uk-text-bold uk-margin-small-bottom">
+                        ODABERITE GROBLJE:
+                    </li>
+                    <li class="main-menu-entry">
+                        <button data-id="Budrovci">Budrovci</button>
+                    </li>
+                    <li class="main-menu-entry">
+                        <button class="selected" data-id="Đakovo">Đakovo</button>
+                    </li>
+                    <li class="main-menu-entry">
+                        <button data-id="Đurđanci">Đurđanci</button>
+                    </li>
+                    <li class="main-menu-entry">
+                        <button data-id="Ivanovci">Ivanovci</button>
+                    </li>
+                    <li class="main-menu-entry">
+                        <button data-id="Kuševac">Kuševac</button>
+                    </li>
+                    <li class="main-menu-entry">
+                        <button data-id="Novi Perkovci">Novi Perkovci</button>
+                    </li>
+                    <li class="main-menu-entry">
+                        <button data-id="Piškorevci">Piškorevci</button>
+                    </li>
+                    <li class="main-menu-entry">
+                        <button data-id="Selci Đakovački">Selci Đakovački</button>
+                    </li>
+                    <li class="main-menu-entry uk-margin-small-bottom">
+                        <button data-id="Široko Polje">Široko Polje</button>
+                    </li>
+                </ul>
+                <!-- /GROBLJA -->
+                <footer class="main-menu-footer uk-text-small">
+                    <hr>
+                    <button id="tutorial-btn" class="link-btn uk-flex uk-flex-middle">
+                        <span uk-icon="icon: file-text" class="uk-margin-small-right"></span>
+                        <span class="link-btn-text">Upute za korištenje aplikacije</span>
+                    </button>
+                    <button id="faq-btn" class="link-btn uk-flex uk-flex-middle uk-margin-small-top">
+                        <span uk-icon="icon: info" class="uk-margin-small-right"></span>
+                        <span class="link-btn-text">Najčešća pitanja i odgovori</span>
+                    </button>
+                    <button id="impressum-btn" class="link-btn uk-flex uk-flex-middle uk-margin-small-top">
+                        <span uk-icon="icon: question" class="uk-margin-small-right"></span>
+                        <span class="link-btn-text">Impresum</span>
+                    </button>
+                    <hr>
+                    <div class="uk-flex uk-flex-middle uk-margin-top">
+                        <img width="50" src="img/grb-djakovo.svg" alt="">
+                        <div class="app-info uk-margin-left">
+                            <small>Đakovo</small>
+                            <small>&copy; <span class="js-godina"></span>. - Sva prava pridržana</small>
+                            <small>Verzija: 1.1</small>
+                            <small id="app-modified">Posljednja promjena: <span>Učitavanje ...</span></small>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </aside>
+    <!-- /MAIN-MENU -->
+
+    <!-- PRIKAZ-INFORMACIJA -->
+    <aside>
+        <div id="grave-info-sidepanel" uk-offcanvas="flip: true; mode: push">
+            <div class="uk-offcanvas-bar">
+                <figure class="uk-width-1-1" id="slika" uk-lightbox></figure>
+                <button id="back-btn" class="uk-button uk-button-default uk-width-1-1">
+                    <span uk-icon="arrow-left" class="uk-margin-small-right"></span>
+                    Povratak
+                </button>
+                <button id="show-on-map-btn" class="uk-button uk-button-default uk-width-1-1">
+                    <span uk-icon="location" class="uk-margin-small-right"></span>
+                    Prikaži na karti
+                </button>
+                <hr>
+                <h5 class="uk-margin-small-top">
+                    <span class="uk-margin-small-right" uk-icon="tag"></span>
+                    Oznaka grobnog mjesta:
+                </h5>
+                <p><span id="oznaka" class="uk-text-small"></span></p>
+                <hr>
+                <h5 class="uk-margin-small-top">
+                    <span class="uk-margin-small-right" uk-icon="info"></span>
+                    Ukopane osobe:
+                </h5>
+                <p><span id="podaci" class="uk-text-small"></span></p>
+                <hr>
+                <h5 class="uk-margin-small-top">
+                    Netočni podaci?
+                </h5>
+                <button id="report-btn"
+                        class="uk-button uk-button-default uk-width-1-1 uk-flex uk-flex-middle uk-flex-center">
+                    <span uk-icon="commenting" class="uk-margin-small-right"></span>
+                    <span>Ispravi!</span>
+                </button>
+            </div>
+        </div>
+    </aside>
+    <!-- /PRIKAZ-INFORMACIJA -->
+
+    <!-- MAIN -->
+    <main class="app">
+
+        <!-- TOP-BAR -->
+        <div class="app-top-bar uk-width-1-1 uk-padding uk-flex-middle uk-grid-collapse" uk-grid>
+
+            <div class="uk-width-1-1 uk-grid-collapse uk-width-auto@m" uk-grid>
+                <div class="uk-width-1-2 uk-width-auto@m">
+
+                    <button id="menu-btn" class="main-menu-button uk-width-1-1 uk-flex uk-flex-middle">
+                        <span uk-icon="icon: menu"></span>
+                        <span class="uk-margin-small-left">Izbornik</span>
+                    </button>
+
+                </div>
+                <div class="uk-width-1-2 uk-width-auto@m">
+                    <button class="locateme-button uk-width-1-1 uk-flex uk-flex-middle" href="#">
+                        <span uk-icon="icon: location"></span>
+                        <span class="uk-margin-small-left">Lociraj me</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="uk-width-1-1 uk-grid-collapse uk-width-expand@m" uk-grid>
+                <div class="uk-width-expand">
+                    <input id="search-bar" class="uk-width-1-1" type="text" placeholder="Pretraga ..." autocomplete="off">
+                </div>
+                <div class="uk-width-auto">
+                    <button id="search-btn" class="uk-button" uk-icon="icon: search"></button>
+                </div>
+            </div>
+
+        </div>
+        <!-- /TOP-BAR -->
+
+        <!-- MAP -->
+        <div class="map-container uk-position-relative">
+            <section id="map"></section>
+        </div>
+        <!-- /MAP -->
+
+        <!-- LOGO -->
+        <div class="univerzal-logo">
+            <img src="img/logo-bijeli.png" alt="">
+        </div>
+        <!-- /LOGO -->
+
+    </main>
+    <!-- /MAIN -->
+
+    <!-- REPORT-MODAL -->
+    <div id="report-modal" class="uk-modal-container " uk-modal>
+        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <form id="contact-form">
+                <fieldset class="uk-fieldset">
+                    <legend class="uk-legend">Prijava pogrešnog podatka</legend>
+                    <input id="form-id" type="hidden"  />
+                    <div id="form" class="uk-margin">
+                        <div class="uk-margin">
+                            <input id="form-name" class="uk-input"  type="text" id="name" placeholder="" autocomplete="off" />
+                        </div>
+                        <div class="uk-margin">
+                            <input id="form-email" class="uk-input" type="text" placeholder="" autocomplete="off"/>
+                        </div>
+                        <div class="uk-margin">
+                            <textarea id="form-message" class="uk-textarea" rows="5" placeholder=""
+                                      name="Poruka"></textarea>
+                        </div>
+                        <div class="uk-margin">
+                            <label><input id="form-gdpr" class="uk-checkbox uk-margin-small-right" type="checkbox">U skladu s Zakonom o zaštiti osobnih podataka popunjavanjem obrasca dajem privolu za prikupljanje i obradu navedenih podataka radi ažuriranja grobnog očevidnika.</label>
+                        </div>
+                        <div class="uk-margin">
+                            <div class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="6Le3--IZAAAAAPFl2d5LV6HftKTcyq0OHR7g2H5K"></div>
+                        </div>
+                        <div class="uk-margin">
+                            <button id="form-submit-btn" class="uk-button uk-button-default" type="submit" disabled>
+                                Pošalji
+                            </button>
+                        </div>
+                    </div>
+                    <div id="form-warning" class="warning-box uk-padding-small">
+                        <span uk-icon="icon: warning" class="uk-margin-small-right"></span>
+                        <span class="form-warning-text"></span>
+                    </div>
+                    <button id="btn-new-report" class="uk-button uk-button-default uk-margin-top">Nova prijava</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <!-- /REPORT-MODAL -->
+
+    <!-- TUTORIAL-MODAL -->
+    <div id="tutorial-modal" class="uk-modal-container" uk-modal>
+        <div class="uk-modal-dialog uk-margin-auto-vertical">
+            <div class="uk-modal-body">
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+                <h2>Upute za korištenje aplikacije</h2>
+                <hr>
+                <p>Aplikacija ima tri glavne funkcionalnosti:</p>
+                <ul>
+                    <li>Pretraga pokojnika </li>
+                    <li>Plociranje grobnog mjesta</li>
+                    <li>trenutačno pozicioniranje korisnika na odabranom groblju (smartphone inačica)</li>
+                </ul>
+                <p>Korištenje aplikacije u koracima:</p>
+                <h4>1. Odabir groblja</h4>
+                <p>Ulaskom u aplikaciju odabrano je Gradsko groblje. Kako biste promijenili groblje koje želite pretražiti,
+                   pritisnite tipku <span class="hamb">☰</span> u gornjem lijevom kutu
+                    aplikacije.
+                <p>Prikazuje se glavni izbornik u kojem se nudi opcija "Odaberite groblje".</p>
+                <p>Pritisak na željeno groblje učitava kartu odabranoga groblja u aplikaciji.</p>
+                <p>Sada možete pretraživati odabrano groblje.</p>
+                <h4>2. Pretraga i pronalazak pokojnika</h4>
+                <p>Kada ste odabrali željeno groblje, pretražujte putem predviđenog polja (trake) za unos
+                    <span uk-icon="search"></span> pri samom vrhu aplikacije (prepoznaje se po tekstu "Pretraži ...").</p>
+                <p>Aplikacija podržava razne načine pretrage pokojnika:</p>
+                <ul>
+                    <li>unesenim punim imenom i prezimenom (neovisno o redoslijedu)</li>
+                    <li>unesenim samo imenom ili prezimenom</li>
+                    <li>unesenim dijelom imena ili prezimena</li>
+                </ul>
+                <p>Na primjer: <i>Marija Horvat</i> / <i>Horvat Marija</i> / <i>Marija</i> / <i>Horvat</i>.
+                <p>Radi potpunih rezultata pretrage koristite slova s dijakritičkim znakovima (čšćđžš).</p>
+                <p><strong>Napomena</strong>: Aplikacija pretražuje samo odabrano groblje, ne sva groblja.</p>
+                <h4>3. Pronalazak grobnog mjesta</h4>
+                <p>Odabirom željenog rezultata aplikacija će učitati traženo grobno mjesto na kartu, označiti ga crvenim
+                   kružićem i otvoriti prikaz detaljnih podataka o grobnom mjestu.</p>
+                <p>Info: Crveni kružić ostaje na karti do novog pokretanja aplikacije ili novog korištenja tražilice.</p>
+                <h4>4. Pozicioniranje korisnika na groblju</h4>
+                <p>Aplikacija nudi mogućnost prikaza Vaše trenutne lokacije na karti.</p>
+                <p>Klikom na ikonicu <span uk-icon="location"></span> u izborniku pri vrhu aplikacije pogledajte gdje se nalazite.</p>
+                <p>Napomena: Za točno pozicioniranje morate imate uključene GPS mogućnosti mobilnog uređaja. Zatraži li preglednik
+                   mobilnog uređaja potvrdu za korištenje ove mogućnosti, potvrdite.</p>
+                <p>Vaša će lokacija biti označena žutim kružićem na karti.</p>
+                <p>Ako ste prethodno odabrali grobno mjesto, aplikacija će prikazati Vašu lokaciju i lokaciju grobnog mjesta kako
+                   biste se lakše snašli u pronalaženju grobnog mjesta u prostoru.</p>
+                <hr>
+                <button class="uk-button uk-button-default uk-modal-close" type="button">Zatvori</button>
+            </div>
+        </div>
+    </div>
+    <!-- /TUTORIAL-MODAL -->
+
+    <!-- IMPRESSUM-MODAL -->
+    <div id="impressum-modal" class="uk-modal-container" uk-modal>
+        <div class="uk-modal-dialog uk-margin-auto-vertical">
+            <div class="uk-modal-body">
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+                <h2>Impresum</h2>
+                <hr>
+                <h4>Naziv publikacije:</h4>
+                <p>e-groblje Ðakovo</p>
+                <p>Adresa (URL): https://www.univerzal-djakovo.hr/e-groblje</p>
+
+                <h4>Izdavač:</h4>
+                <p>Univerzal d.o.o.</p>
+                <p>Vladimira Nazora 68</p>
+                <p>31400 Đakovo</p>
+
+                <h4>Za izdavača:</h4>
+                <p>Stjepan Ripić</p>
+
+                <h4>Urednici:</h4>
+                <p>Danijel Geošić</p>
+                <p>Stjepan Eberhardt</p>
+
+                <h4>Razvoj aplikacije:</h4>
+                <p>Plavi link j.d.o.o.</p>
+                <p>Certise 41</p>
+                <p>31400 Đakovo</p>
+
+                <h4>Ortofoto i karte:</h4>
+                <p>Darko Milošević, dipl.ing.geod.</p>
+                <br>
+                <p>&copy; <span class="js-godina"></span>. Univerzal i Plavi link</p>
+                <hr>
+                <button class="uk-button uk-button-default uk-modal-close" type="button">Zatvori</button>
+            </div>
+        </div>
+        <!-- /IMPRESSUM-MODAL -->
+    </div>
+
+    <!-- FAQ-MODAL -->
+    <div id="faq-modal" class="uk-modal-container" uk-modal>
+        <div class="uk-modal-dialog uk-margin-auto-vertical">
+            <div class="uk-modal-body">
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+                <h2>Najčešća pitanja i odgovori o grobnim mjestima</h2>
+                <hr>
+                <ul uk-accordion>
+                    <li>
+                        <span class="uk-accordion-title">Prema kojim propisima postupa Uprava groblja?</span>
+                        <div class="uk-accordion-content">
+                            <p>Univerzal d.o.o. za komunalne djelatnosti Đakovo - Uprava groblja postupa prema
+                                Zakonu o grobljima (Narodne novine broj 19/98, 50/12), Odluci o grobljima
+                                (Službeni list Grada Đakova 2/99, 8/00) te vrijedećem Cjeniku.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="uk-accordion-title">Tko je vlasnik groba?</span>
+                        <div class="uk-accordion-content">
+                            <p>Vlasnik zemljišta na kojem se grobno mjesto nalazi je Grad Đakovo. Fizičke i
+                                pravne osobe mogu biti korisnici grobnih mjesta i vlasnici nadgrobnog uređaja
+                                (spomenik, pokrovna ploča i drugi elementi i oprema uređenoga grobnog mjesta).</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="uk-accordion-title">U čemu je razlika između prava korištenja i prava ukopa?</span>
+                        <div class="uk-accordion-content">
+                            <p>Pravo korištenja je šire od prava ukopa, a obuhvaća i pravo ukopa, pravo
+                                raspolaganja grobnim mjestom i pravo uređenja grobnog mjesta. Korisnik može
+                                ustupiti grobno mjesto i prodati nadgrobni uređaj, dati pravo ukopa trećoj
+                                osobi, te donositi sve odluke u vezi uređenja grobnog mjesta.Također, bez
+                                posebnog ovlaštenja korisnika grobnog mjesta (ako im ukop nije izričito
+                                zabranjen), u grob se ukapaju i članovi obitelji korisnika (bračni ili
+                                izvanbračni partner, potomci i posvojena djeca i njihovi bračni ili izvanbračni
+                                partnerte roditelji korisnika). Pravo ukopa može biti osobno ili s
+                                obitelji. Osobno pravo ukopa znači da se u grob smije pokapati osoba izričito
+                                navedena ispravom kojom se daje pravo ukopa. Pravo ukopa s obitelji znači da se u
+                                grobno mjesto mogu ukapati i članovi obitelji nositelja prava ukopa.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="uk-accordion-title">Kako se regulira pravo korištenja grobnog mjesta nakon smrti korisnika i vlasnika nadgrobnog uređaja?</span>
+                        <div class="uk-accordion-content">
+                            <p>Pravo korištenja se nasljeđuje u ostavinskom postupku iza osobe koja je u grobnoj
+                                evidenciji upisana kao korisnik grobnog mjesta. Ako je ostavinski postupak
+                                proveden, a naknadno se utvrdi da je ostavitelj nositelj prava korištenja
+                                grobnog mjesta koje u tom postupku nije bilo navedeno, pravo korištenja se
+                                rješava naknadnom urudžbom i provođenjem ostavine za to grobno mjesto kao naknadno
+                                pronađene imovine.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="uk-accordion-title">Na koji način se grobno mjesto može ustupiti?</span>
+                        <div class="uk-accordion-content">
+                            <p>Pravo korištenja grobnog mjesta ustupa se ugovorom o ustupanju prava korištenja.
+                                Ako ima više sukorisnika, a ne radi se o ustupanju prava korištenja među
+                                sukorisnicima, za ustupanje je potrebna suglasnost svih sukorisnika. Pravo
+                                korištenja može se ustupiti članu obitelji, osobi koja je upisana kao sukorisnik
+                                istoga grobnog mjesta.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="uk-accordion-title">Tko održava i uređuje grobno mjesto?</span>
+                        <div class="uk-accordion-content">
+                            <p>Održavanje i uređivanje grobnih mjesta je pravo i dužnost korisnika. Grobna
+                                naknada se plaća za održavanje zajedničkih dijelova groblja.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="uk-accordion-title">Što znači da je grob napušten?</span>
+                        <div class="uk-accordion-content">
+                            <p>Grob se smatra napuštenim ako grobna naknada nije plaćana 10 godina. Istekom tog
+                                roka prestaje pravo korištenja i sva prava koja su upisana u grobnu evidenciju.
+                                Činjenica da je grob uređivan, održavan i/ili posjećen ne utječe na prestanak
+                                prava korištenja.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="uk-accordion-title">Što je ekshumacija?</span>
+                        <div class="uk-accordion-content">
+                            <p>Ekshumacija je iskapanje i prijenos umrlih osoba. Iskop posmrtnih ostataka umrle
+                                osobe radi prijenosa u drugo grobno mjesto može se ugovoriti na zahtjev bračnog
+                                ili izvanbračnog partnera, djece i posvojenika umrle osobe. Ako umrla osoba nije
+                                imala bračnog ili izvanbračnog partnera i djecu ili su umrli prije nje,
+                                ekshumacija se može ugovoriti na zahtjev roditelja i njihovih potomaka koji su
+                                snosili troškove ukopa.</p>
+                            <p>Za ekshumaciju je potrebna suglasnost korisnika grobnog mjesta u kojem je
+                                pokojnik bio pokopan i grobnog mjesta u koje se posmrtni ostaci prenose. Sve
+                                detalje i uvjete ugovaranja iskopavanja umrlih i već pokopanih osoba potrebno je
+                                prethodno provjeriti u Upravi groblja.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="uk-accordion-title">Što je ekshumacija radi oslobađanja ukopnih mjesta za daljnja ukapanja?</span>
+                        <div class="uk-accordion-content">
+                            <p>Ekshumacija je postupak prelaganja - izmještanja posmrtnih ostataka radi
+                                oslobađanja ukopnih mjesta za daljnja ukapanja.</p>
+
+                            <p>Ekshumaciju je u pravilu moguće izvršiti:
+                            <ul>
+                                <li>u produbljenje groba (ukop u zemlju, na nižu dubinu), ako je proteklo 15
+                                    godina od posljednjeg ukopa, a način i izvršenje ekshumacije zavisi od
+                                    stanja posmrtnih ostataka
+                                </li>
+                                <li>unutar grobnice se obavlja prelaganje posmrtnih ostataka, ako je proteklo 30
+                                    godina od ukopa
+                                </li>
+                                <li>Izvršenje također zavisi od stanja posmrtnih ostataka. U takvim slučajevima
+                                    je riječ o prelaganju posmrtnih ostataka u manji sandučić i/ili u izgrađenu
+                                    kosturnicu radi oslobađanja mjesta u grobnici.
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="uk-accordion-title">Koliko ima ukopnih mjesta u grobnom mjestu?</span>
+                        <div class="uk-accordion-content">
+                            <p>U zemljanom grobu su u pravilu tri ukopna mjesta u tri dubine. Nakon ciklusa od 15
+                                godina te po izvršenju ekshumacije u produbljenje oslobađaju se ukopna mjesta za
+                                daljnja ukapanja. Grobnice se grade za dva, tri, četiri, šest, osam i više ukopnih
+                                mjesta, što zavisi od tehničkih uvjeta. Najčešće su grobnice od tri i šest
+                                ukopnih mjesta.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="uk-accordion-title">Tko uklanja vijence i cvijeće nakon ukopa i nakon koliko dana?</span>
+                        <div class="uk-accordion-content">
+                            <p>Vijence i cvijeće uklanjaju djelatnici Univerzala d.o.o. Đakovo 20-30 dana nakon
+                                ukopa. Na poseban zahtjev stranke vijenci se mogu ukloniti i ranije.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="uk-accordion-title">Tko je dužan zacementirati pokrovnu ploču nakon ukopa?</span>
+                        <div class="uk-accordion-content">
+                            <p>Cementiranje pokrovne ploče može se naručiti pri ugovaranju pogreba zajedno
+                                s ostalim uslugama ili pojedinačno na zahtjev</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="uk-accordion-title">Što poduzeti nakon što je prilikom posjeta grobu uočena krađa ili oštećenje?</span>
+                        <div class="uk-accordion-content">
+                            <p>Krađu prijaviti policiji i u pisanom obliku prijaviti Upravi groblja (Đakovo,
+                                Ljudevita Gaja 31).</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="uk-accordion-title">Što je potrebno učiniti kako bi se dobila dozvola za uređenje grobnog uređaja?</span>
+                        <div class="uk-accordion-content">
+                            <p>Sve detalje u vezi uređenja groba ili kazete korisnik dogovara s ovlaštenim
+                                izvođačem po vlastitom odabiru. U Upravu groblja potrebno je predati pisani
+                                zahtjev s podacima o grobnom mjestu, korisniku, izvođaču i detaljima uređenja.
+                                Zahtjev obavezno potpisuju korisnik groba i izvođač, te uz isti prilažu nacrt
+                                s označenim dimenzijama ili kratki opis radova koji se namjeravaju izvesti.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="uk-accordion-title">Što je godišnja grobna naknada, namira za održavanje grobnog mjesta?</span>
+                        <div class="uk-accordion-content">
+                            <p>Za korištenje grobnog mjesta korisnik plaća godišnju grobnu naknadu. Visinu
+                                naknade određuje Uprava groblja. Grobna naknada se plaća za godišnje održavanje
+                                groblja, koje podrazumijeva hortikulturalno uređenje i održavanje (ne
+                                pojedinačnih grobova), odvoz otpada, održavanje cesta i staza, vodovodne i
+                                kanalizacijske mreže, kao i održavanje objekata na groblju.</p>
+                        </div>
+                    </li>
+                </ul>
+                <hr>
+                <button class="uk-button uk-button-default uk-modal-close" type="button">Zatvori</button>
+            </div>
+        </div>
+    </div>
+    <!-- /FAQ-MODAL -->
+
+    <!-- IMG-OVERLAY -->
+    <div id="img-overlay" class="landing-img uk-overlay-primary uk-position-cover uk-flex uk-flex-middle uk-flex-center">
+    </div>
+    <!-- /IMG-OVERLAY -->
+
+    <!-- APP-OVERLAY -->
+    <div class="app-overlay uk-overlay-primary uk-position-cover"></div>
+    <!-- /APP-OVERLAY -->
+
+    <!-- SPINNER-OVERLAY -->
+    <div class="spinner-overlay uk-overlay-primary uk-position-cover uk-flex uk-flex-middle uk-flex-center">
+        <div uk-spinner="ratio: 2"></div>
+    </div>
+    <!-- /SPINNER-OVERLAY -->
+
+    <!-- SEARCH-OVERLAY -->
+    <div class="search-overlay uk-overlay-primary uk-position-cover">
+        <button id="close-search" type="button" uk-close></button>
+        <ul id="search-results-list">
+            <span>Nema rezultata</span>
+        </ul>
+    </div>
+    <!-- /SEARCH-OVERLAY -->
+
+</body>
+
+<script src="js/uikit.min.js"></script>
+<script src="js/uikit-icons.min.js"></script>
+<script src="//editor.giscloud.com/1/api.js"></script>
+<script src="js/proj4js-compressed.js"></script>
+<script src="js/map.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R0HNHC127Q"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-R0HNHC127Q');
+</script>
+</html>

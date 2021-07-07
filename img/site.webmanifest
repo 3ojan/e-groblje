@@ -1,0 +1,14 @@
+{
+    "name": "e-groblje \u0110akovo",
+    "short_name": "e-groblje \u0110akovo",
+    "icons": [
+        {
+            "src": "https://univerzal-djakovo.hr/e-groblje/img/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#222222",
+    "background_color": "#222222",
+    "display": "standalone"
+}
