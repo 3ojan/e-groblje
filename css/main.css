@@ -467,5 +467,5 @@ button:disabled {
 }
 
 .locate-me-green {
-    background: #1e9a01;
+    background: #1e9a01 !important;
 }
